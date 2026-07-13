@@ -1,116 +1,145 @@
-Codalyx: Your AI-Powered Developer Growth Companion
+# Codalyx 🚀 — Your AI-Powered Developer Growth Companion
 
-Codalyx is designed for developers who are tired of switching between multiple platforms just to understand their progress.
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![Node.js](https://img.shields.io/badge/Node.js-v18+-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Google Gemini](https://img.shields.io/badge/Google_Gemini-Pro-8E75C2?style=for-the-badge&logo=googlegemini&logoColor=white)](https://deepmind.google/technologies/gemini/)
 
-Today, most developers use platforms like GitHub, LeetCode, Codeforces, CodeChef, and AtCoder. However, tracking performance across all of them is fragmented and inefficient. Codalyx solves this by bringing everything together into a single, unified dashboard.
+**Codalyx** is a comprehensive, unified developer platform designed for engineers who want to track their progress, optimize their learning path, and eliminate the friction of switching between multiple competitive programming and development platforms. 
 
-In addition, it includes an AI-powered Performance Coach (built using Google Gemini) that not only tracks your progress but also helps you identify weaknesses and improve in a structured way.
-
-Codalyx is not just a dashboard. It is a system that helps you grow as a developer.
-
----
-
-## Key Features
-
-### Unified Developer Dashboard
-
-Codalyx provides a centralized view of your entire coding journey.
-
-- Track GitHub repositories, language usage, and development activity  
-- Analyze performance across platforms like LeetCode, Codeforces, and CodeChef  
-- Understand your consistency and problem-solving behavior through structured analytics  
+By consolidating profiles from **GitHub, LeetCode, Codeforces, CodeChef, and AtCoder**, Codalyx provides a single source of truth for your developer journey. Powered by **Google Gemini Pro**, it acts as an intelligent Performance Coach that analyses your performance, identifies weak spots, and builds custom roadmaps to accelerate your engineering growth.
 
 ---
 
-### Contest Tracking and Reminders
+## 📸 Platform Preview
 
-For competitive programmers, staying consistent is critical.
-
-- View upcoming contests from multiple platforms in one place  
-- Receive automated reminders before contests  
-- Analyze your post-contest performance, including ranking trends  
+![User Activity Data Sync](./User%20Activity%20Data%20Sync-2026-04-22-044601.png)
 
 ---
 
-### AI Performance Coach
+## ✨ Key Features
 
-The AI layer makes Codalyx more than just a tracking tool.
+### 📊 Unified Developer Dashboard
+* **Omnichannel Analytics:** Track your repositories, language distribution, and commits on GitHub alongside your rankings and problems solved on LeetCode, Codeforces, CodeChef, and AtCoder.
+* **Consistency Graphs:** Visualize your daily habits, streaks, and problem-solving velocity in one central command center.
 
-- Generates personalized roadmaps based on your weak areas  
-- Provides clear explanations of important concepts such as DSA, OS, DBMS, and SQL  
-- Maintains a revision system to help you retain previously learned topics  
+### 🔔 Smart Contest Tracker & Reminders
+* **Global Contest Schedule:** Aggregated calendar displaying all upcoming competitive programming contests.
+* **Automated Alerts:** Get notifications and reminders before contests start so you never miss a match.
+* **Post-Contest Analysis:** Track your ratings, ranking trends, and performance shift over time.
 
----
+### 🧠 Google Gemini-Powered AI Coach
+* **Weakness Analysis:** AI scans your submission history to pinpoint syntax gaps, algorithmic weaknesses, or execution bottlenecks.
+* **Custom Roadmaps:** Generates structured, personalized learning paths dynamically updated as you improve.
+* **Interactive Explanations:** Real-time coaching on core Computer Science topics including DSA, OS, DBMS, and System Design.
+* **Spaced Repetition System:** Smart revision schedules to reinforce concepts you struggle with.
 
-### Chrome Extension Integration
-
-Codalyx integrates directly into your workflow.
-
-- Sync data seamlessly from coding platforms  
-- Eliminate the need for manual updates  
-
----
-
-## Tech Stack
-
-- Frontend: React 19, Vite, Tailwind CSS, Framer Motion  
-- Backend: Node.js, Express, MongoDB (Mongoose)  
-- Authentication: JWT with Passport.js  
-- AI Engine: Google Gemini Pro (v1.5)  
-- Performance Optimization: Smart scraping and caching for low-latency updates  
+### 🔌 Chrome Extension Syncing
+* **Seamless Integration:** Pull profile stats and submission data directly from coding platforms without manual entry.
+* **Low-Latency Updates:** Lightweight and secure extension that keeps your dashboard real-time.
 
 ---
 
-## Installation and Setup
+## 🛠️ Tech Stack
+
+| Layer | Technologies |
+| :--- | :--- |
+| **Frontend** | React 19, Vite, Tailwind CSS, Framer Motion, Lucide Icons |
+| **Backend** | Node.js, Express, REST API |
+| **Database** | MongoDB Atlas, Mongoose ODM |
+| **Authentication** | JSON Web Tokens (JWT), Passport.js |
+| **AI Integration** | Google Gemini API (v1.5 Pro/Flash) |
+| **Scraping & Sync** | Chrome Extension API, Puppeteer / Axios (Server Scrapers) |
+
+---
+
+## 📁 Repository Structure
+
+```text
+codalyx/
+├── client/              # React 19 Frontend (Vite + Tailwind CSS)
+├── server/              # Node.js Express Backend
+├── chrome-extension/    # Browser Extension for automatic profile data sync
+└── README.md            # Documentation and Guide
+```
+
+---
+
+## 🚀 Installation and Local Setup
 
 ### Prerequisites
+* **Node.js** (v18.x or higher)
+* **MongoDB** (Local instance or MongoDB Atlas Connection URI)
+* **Google Gemini API Key** (Obtain from [Google AI Studio](https://aistudio.google.com/))
 
-- Node.js (v18 or higher)  
-- MongoDB Atlas account  
-- Google Gemini API Key  
+### 1. Clone the Repository
+```bash
+git clone https://github.com/vaibhavvvv7/Codalyx.git
+cd Codalyx
+```
 
----
+### 2. Environment Configuration
 
-### Environment Configuration
-
-Create a `.env` file in the `server/` directory:
-
+#### Backend Configuration
+Create a `.env` file inside the `server/` directory:
+```env
 PORT=4000
-MONGODB_URI=your_atlas_connection_string
-JWT_SECRET=your_secret_key
-GEMINI_API_KEY=your_gemini_key
+MONGODB_URI=your_mongodb_atlas_connection_string
+JWT_SECRET=your_jwt_signing_key_here
+GEMINI_API_KEY=your_google_gemini_api_key
 CLIENT_URL=http://localhost:5173
+```
 
-Create a `.env` file in the `client/` directory:
-
+#### Frontend Configuration
+Create a `.env` file inside the `client/` directory:
+```env
 VITE_API_URL=http://localhost:4000/api
+```
 
----
+### 3. Run Locally
 
-### Run Locally
-
-# Install dependencies
-cd server && npm install
-cd ../client && npm install
-
-# Start backend
+#### Start the Server (Backend)
+```bash
 cd server
+npm install
 npm run dev
+```
 
-# Start frontend
+#### Start the Client (Frontend)
+Open a new terminal session, then:
+```bash
 cd client
+npm install
 npm run dev
+```
+The application will launch on [http://localhost:5173](http://localhost:5173) and talk to the backend running on port `4000`.
+
+### 4. Load the Chrome Extension
+1. Open Google Chrome and navigate to `chrome://extensions/`.
+2. Toggle **Developer mode** (top-right corner).
+3. Click **Load unpacked** (top-left corner).
+4. Select the `chrome-extension/` directory from this repository.
+5. The extension icon will now appear in your browser, ready to sync data with your local dashboard.
 
 ---
 
-## Contribution
+## 🤝 Contributing
 
-Contributions are welcome. You can open an issue or submit a pull request for improvements, features, or bug fixes.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License.
+Distributed under the MIT License. See `LICENSE` for more information.
 
+---
 
+*Built with ❤️ for developers, by [Vaibhav](https://github.com/vaibhavvvv7).*
