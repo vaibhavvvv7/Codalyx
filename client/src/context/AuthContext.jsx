@@ -59,12 +59,11 @@ export function AuthProvider({ children }) {
 
   function loginWithGoogle() {
     const envUrl = import.meta.env.VITE_API_URL
-    const isProd = !window.location.hostname.includes('localhost')
-    
-    // If we have an ENV URL and it's production, or we are on prod hostname
-    let target = isProd ? 'https://codalyx.onrender.com' : 'http://localhost:4000'
-    if (envUrl && envUrl.includes('onrender.com')) {
-      target = envUrl.replace(/\/api$/, '')
+    let target = window.location.origin
+    if (envUrl) {
+      target = envUrl.replace(/\/api\/?$/, '')
+    } else if (window.location.hostname.includes('localhost') || window.location.hostname.includes('127.0.0.1')) {
+      target = 'http://localhost:4000'
     }
     
     const origin = window.location.origin
@@ -73,11 +72,11 @@ export function AuthProvider({ children }) {
 
   function loginWithGitHub() {
     const envUrl = import.meta.env.VITE_API_URL
-    const isProd = !window.location.hostname.includes('localhost')
-    
-    let target = isProd ? 'https://codalyx.onrender.com' : 'http://localhost:4000'
-    if (envUrl && envUrl.includes('onrender.com')) {
-      target = envUrl.replace(/\/api$/, '')
+    let target = window.location.origin
+    if (envUrl) {
+      target = envUrl.replace(/\/api\/?$/, '')
+    } else if (window.location.hostname.includes('localhost') || window.location.hostname.includes('127.0.0.1')) {
+      target = 'http://localhost:4000'
     }
     
     const origin = window.location.origin

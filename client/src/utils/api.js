@@ -2,12 +2,12 @@ import axios from 'axios'
 
 const getBaseURL = () => {
   const envUrl = import.meta.env.VITE_API_URL
-  if (envUrl && envUrl.includes('onrender.com')) return envUrl
+  if (envUrl) return envUrl
   
-  if (typeof window !== 'undefined' && !window.location.hostname.includes('localhost')) {
-    return 'https://codalyx.onrender.com/api'
+  if (typeof window !== 'undefined' && !window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1')) {
+    return '/api'
   }
-  return envUrl || 'http://localhost:4000/api'
+  return 'http://localhost:4000/api'
 }
 
 const api = axios.create({ 

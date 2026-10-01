@@ -1,10 +1,22 @@
 import Redis from 'ioredis'
 
-const redis = new Redis(process.env.REDIS_URL, {
-  maxRetriesPerRequest: null,
-})
+let redis = null
 
-redis.on('connect', () => console.log('Redis connected'))
-redis.on('error', err => console.error('Redis error:', err))
+if (process.env.REDIS_URL) {
+  redis = new Redis(process.env.REDIS_URL, {
+    maxRetriesPerRequest: null,
+    lazyConnect: true,
+  })
+  redis.on('connect', () => console.log('Redis connected'))
+  redis.on('error', err => console.warn('Redis warning:', err.message))
+} else {
+  redis = {
+    get: async () => null,
+    set: async () => null,
+    del: async () => null,
+    on: () => {},
+  }
+}
 
 export { redis }
+
